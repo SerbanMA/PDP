@@ -32,7 +32,5 @@ public class Consumer {
                 }
             }
         } catch (Exception ignore) {}
-
-
     }
 }

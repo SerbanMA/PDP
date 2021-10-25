@@ -43,6 +43,5 @@ public class Producer {
             }
         } catch (InterruptedException ignore) {}
     }
-
 }
 
