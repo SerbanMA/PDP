@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         int size = 2000;
-        int noThreads = 20;
+        int noThreads = 8;
 
         Matrix matrixA = new Matrix(size).computeRandom();
         Matrix matrixB = new Matrix(size).computeRandom();

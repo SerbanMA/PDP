@@ -1,0 +1,7 @@
+D:\University__\PDP\Laboratory4\Laboratory4\bin\Debug\Laboratory4.exe.config
+D:\University__\PDP\Laboratory4\Laboratory4\bin\Debug\Laboratory4.exe
+D:\University__\PDP\Laboratory4\Laboratory4\bin\Debug\Laboratory4.pdb
+D:\University__\PDP\Laboratory4\Laboratory4\obj\Debug\Laboratory4.csproj.AssemblyReference.cache
+D:\University__\PDP\Laboratory4\Laboratory4\obj\Debug\Laboratory4.csproj.CoreCompileInputs.cache
+D:\University__\PDP\Laboratory4\Laboratory4\obj\Debug\Laboratory4.exe
+D:\University__\PDP\Laboratory4\Laboratory4\obj\Debug\Laboratory4.pdb

@@ -1,6 +1,5 @@
 package main.java.domain;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Matrix {
@@ -23,7 +22,7 @@ public class Matrix {
 
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                matrix[i][j] = random.nextInt(100);
+                matrix[i][j] = random.nextInt(10);
             }
         }
 
