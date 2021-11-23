@@ -79,7 +79,7 @@ namespace Laboratory4.server
             {
                 var bytesRead = clientSocket.EndReceive(ar);
 
-                httpObject.responseContent += Encoding.ASCII.GetString(httpObject.buffer, 0, bytesRead);
+                httpObject.responseContent.Append(Encoding.ASCII.GetString(httpObject.buffer, 0, bytesRead));
 
                 if (!HttpHelper.IsResponseHeaderFullyObtained(httpObject.responseContent.ToString()))
                 {
@@ -96,8 +96,11 @@ namespace Laboratory4.server
                     }
                     else
                     {
+                        foreach (var i in httpObject.responseContent.ToString().Split('\r', '\n'))
+                            Console.WriteLine(i);
+
                         Console.WriteLine(
-                            "{0} --> Response received : expected {1} chars in body, got {2} chars (headers + body)",
+                            "{0} --> Response received : expected {1} chars in body, got {2} chars",
                             clientId, contentLengthHeaderValue, httpObject.responseContent.Length);
 
                         clientSocket.Shutdown(SocketShutdown.Both);

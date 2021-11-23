@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Text;
 
 namespace Laboratory4.domain
 {
@@ -8,10 +9,10 @@ namespace Laboratory4.domain
     {
         // Socket
         public Socket clientSocket = null;
-        public const int bufferSize = 1024;
+        public const int bufferSize = 1024*8;
         public byte[] buffer = new byte[bufferSize];
 
-        public string responseContent = "";
+        public StringBuilder responseContent = new StringBuilder();
 
         public int clientId;
         // Server
