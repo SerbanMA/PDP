@@ -20,7 +20,7 @@ public class Polynomial {
         coefficients = new ArrayList<>(degree + 1);
         Random random = new Random();
         for (int i = 0; i < degree; i++) {
-            coefficients.add(random.nextInt(BOUND));
+            coefficients.add(random.nextInt(-BOUND, BOUND));
         }
         coefficients.add(random.nextInt(1, BOUND));
     }
