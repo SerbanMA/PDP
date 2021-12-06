@@ -6,45 +6,47 @@ import java.util.Random;
 
 public class Polynomial {
 
-    private static final Integer BOUND = 10;
-    private final Integer degree;
+    private static final int BOUND = 10;
     private final List<Integer> coefficients;
 
     public Polynomial(List<Integer> coefficients) {
         this.coefficients = coefficients;
-        degree = coefficients.size() - 1;
     }
 
-    public Polynomial(Integer degree) {
-        this.degree = degree;
+    public Polynomial(int degree) {
         coefficients = new ArrayList<>(degree + 1);
         Random random = new Random();
-        for (int i = 0; i < degree; i++) {
+        for (int i = 0; i <= degree; i++) {
             coefficients.add(random.nextInt(-BOUND, BOUND));
         }
-        coefficients.add(random.nextInt(1, BOUND));
+        while (coefficients.get(degree) == 0)
+            coefficients.set(degree, random.nextInt(-BOUND, BOUND));
     }
 
     public Polynomial clear() {
-        for (int i = 0; i <= degree; i++) {
+        for (int i = 0; i <= coefficients.size() - 1; i++) {
             coefficients.set(i, 0);
         }
         return this;
     }
 
-    public Integer getDegree() {
-        return degree;
+    public int getDegree() {
+        return coefficients.size() - 1;
     }
 
-    public Integer getCoefficient(Integer index) {
+    public List<Integer> getCoefficients() {
+        return coefficients;
+    }
+
+    public int getCoefficient(int index) {
         return coefficients.get(index);
     }
 
-    public void setCoefficient(Integer index, Integer value) {
+    public void setCoefficient(int index, int value) {
         coefficients.set(index, value);
     }
 
-    public Integer getSize() {
+    public int getSize() {
         return coefficients.size();
     }
 
