@@ -101,13 +101,13 @@ public class MyImage {
         while(!executorService.isTerminated()) {}
     }
 
-    public float exportGrayImageToFile(String fileName) {
+    public void exportGrayImageToFile(String fileName) {
         float start =  System.nanoTime() / 1000000;
         grayImageFilter();
-        exportImage(fileName, createPixelMatrix(grayScale, grayScale, grayScale));
         float end = System.nanoTime() / 1000000;
+        exportImage(fileName, createPixelMatrix(grayScale, grayScale, grayScale));
 
-        return (end - start) / 1000;
+        System.out.println(fileName + " time: " + (end - start) / 1000 + "s");
     }
 
     private void blurImageFilter() {
@@ -121,12 +121,12 @@ public class MyImage {
         while(!executorService.isTerminated()) {}
     }
 
-    public float exportBlurImageToFile(String fileName) {
+    public void exportBlurImageToFile(String fileName) {
         float start =  System.nanoTime() / 1000000;
         blurImageFilter();
-        exportImage(fileName, blurMatrix);
         float end = System.nanoTime() / 1000000;
+        exportImage(fileName, blurMatrix);
 
-        return (end - start) / 1000;
+        System.out.println(fileName + " time: " + (end - start) / 1000 + "ms");
     }
 }
