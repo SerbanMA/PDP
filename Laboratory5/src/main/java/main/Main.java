@@ -10,8 +10,11 @@ public class Main {
     private static final int numberOfThreads = 6;
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        Polynomial polynomial1 = new Polynomial(10000);
-        Polynomial polynomial2 = new Polynomial(10000);
+        Polynomial polynomial1 = new Polynomial(10);
+        Polynomial polynomial2 = new Polynomial(10);
+
+        System.out.println(polynomial1);
+        System.out.println(polynomial2);
 
         regularSequenceForm(polynomial1, polynomial2);
         regularParallelizedForm(polynomial1, polynomial2);
@@ -21,7 +24,7 @@ public class Main {
 
     private static void regularSequenceForm(Polynomial polynomial1, Polynomial polynomial2) {
         long startTime = System.currentTimeMillis();
-        Service.regularSequenceForm(polynomial1, polynomial2);
+        System.out.println(Service.regularSequenceForm(polynomial1, polynomial2));
         long endTime = System.currentTimeMillis();
         System.out.println("Simple sequence multiplication of polynomials execution time: " + (endTime - startTime) + "ms");
     }

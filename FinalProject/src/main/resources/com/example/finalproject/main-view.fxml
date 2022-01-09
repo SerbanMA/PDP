@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.finalproject.UIController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox>
+        <Button onAction="#onUploadClick">
+            Upload picture
+        </Button>
+    </HBox>
+
+
+    <HBox spacing="20.0">
+        <VBox spacing="20.0">
+            <Label>Initial image: </Label>
+            <ImageView fx:id="initialImage" fitHeight="300" fitWidth="450" preserveRatio="true" pickOnBounds="true" />
+        </VBox>
+        <VBox spacing="20.0">
+            <Label>Result image: </Label>
+            <ImageView fx:id="resultImage" fitHeight="300" fitWidth="450" preserveRatio="true" pickOnBounds="true" />
+        </VBox>
+    </HBox>
+
+    <VBox spacing="20.0">
+        <Label fx:id="sliderValue"/>
+        <Slider fx:id="slider"/>
+    </VBox>
+
+    <HBox spacing="20.0">
+        <RadioButton fx:id="blur" text="Blur">
+            <HBox.margin>
+                <Insets right="3.0"/>
+            </HBox.margin>
+            <toggleGroup>
+                <ToggleGroup fx:id="group"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="gray" text="Grayscale">
+            <HBox.margin>
+                <Insets right="30.0"/>
+            </HBox.margin>
+            <toggleGroup>
+                <fx:reference source="group"/>
+            </toggleGroup>
+        </RadioButton>
+    </HBox>
+
+    <Label alignment="CENTER" fx:id="message">You need to upload an image!</Label>
+    <Button alignment="CENTER" onAction="#onApplyChangesClick" onMousePressed="#onApplyChangesPress">
+        Apply changes
+    </Button>
+
+</VBox>
